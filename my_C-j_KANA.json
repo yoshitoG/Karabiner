@@ -1,0 +1,62 @@
+{
+    "title": "CTRL + j to toggle KANA",
+    "rules": [
+        {
+            "description": "「control + j」を英数・かなのトグルにする＝押すたびにIMEのオンオフを切り替える",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "input_sources": [
+                                {
+                                    "language": "ja"
+                                }
+                            ],
+                            "type": "input_source_if"
+                        }
+                    ],
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        },
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "input_sources": [
+                                {
+                                    "language": "en"
+                                }
+                            ],
+                            "type": "input_source_if"
+                        }
+                    ],
+                    "from": {
+                        "modifiers": {
+                            "mandatory": [
+                                "control"
+                            ]
+                        },
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
